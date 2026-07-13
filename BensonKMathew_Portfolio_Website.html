@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="logoS.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benson K Mathew - Revenue Operations Strategist</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --slate:   #2C3347;
+    --charcoal:#1A1F2E;
+    --ink:     #0D1017;
+    --gold:    #C9A84C;
+    --gold-lt: #E8C97A;
+    --gold-dim:#8B6914;
+    --cream:   #F5F0E8;
+    --off-wh:  #EDF0F4;
+    --muted:   #8A93A8;
+    --white:   #FFFFFF;
+    --teal:    #2DD4BF;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--ink);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 24px 60px;
+    backdrop-filter: blur(16px);
+    background: rgba(13,16,23,0.7);
+    border-bottom: 1px solid rgba(201,168,76,0.08);
+  }
+  .nav-logo{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    text-decoration:none;
+}
+
+.nav-logo img{
+    height:100px;
+    width:auto;
+    display:block;
+    transform: translateY(7px);
+}
+
+.nav-logo span{
+    margin-left:-40px;
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-size:22px;
+    color:var(--gold);
+}
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a {
+    color: var(--muted); font-size: 13px; letter-spacing: 1.5px;
+    text-transform: uppercase; text-decoration: none;
+    transition: color 0.25s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 10px 24px; cursor: pointer;
+    transition: all 0.25s;
+    text-decoration: none;
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--ink); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 140px 80px 100px 80px;
+    position: relative; z-index: 2;
+  }
+
+  .hero-eyebrow {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 36px;
+  }
+  .hero-eyebrow-line {
+    width: 40px; height: 1px; background: var(--gold);
+  }
+  .hero-eyebrow span {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); font-weight: 500;
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 5.5vw, 84px);
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -2px;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(20px, 2.5vw, 30px);
+    color: var(--muted);
+    font-weight: 400;
+    margin-bottom: 32px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-desc {
+    font-size: 15px; line-height: 1.8; color: var(--muted);
+    max-width: 420px; margin-bottom: 48px;
+    font-weight: 300;
+  }
+
+  .hero-actions { display: flex; align-items: center; gap: 28px; }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--ink);
+    border: none; padding: 16px 36px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-lt); transform: translateY(-2px); }
+  .btn-ghost {
+    color: var(--muted); font-size: 13px; font-weight: 400;
+    text-decoration: none; letter-spacing: 0.5px;
+    display: flex; align-items: center; gap: 8px;
+    transition: color 0.25s;
+  }
+  .btn-ghost:hover { color: var(--white); }
+  .btn-ghost svg { transition: transform 0.25s; }
+  .btn-ghost:hover svg { transform: translateX(4px); }
+
+  .hero-stats {
+    display: flex; gap: 40px; margin-top: 64px;
+    padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .hero-stat {}
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px; font-weight: 700; color: var(--gold);
+    line-height: 1;
+  }
+  .hero-stat-lbl {
+    font-size: 11px; color: var(--muted); letter-spacing: 1px;
+    text-transform: uppercase; margin-top: 6px;
+  }
+
+  /* Hero right - photo */
+  .hero-right {
+    position: relative; overflow: hidden;
+  }
+  .hero-photo-wrap {
+    position: absolute; inset: 0;
+  }
+  .hero-photo-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+    object-position: center top;
+    filter: grayscale(20%) contrast(1.05);
+  }
+  /* Gradient overlay left edge of photo for blend */
+  .hero-photo-wrap::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, var(--ink) 0%, rgba(13,16,23,0.3) 40%, transparent 70%);
+    z-index: 1;
+  }
+  /* Gold glow orb */
+  .hero-glow {
+    position: absolute; bottom: -100px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(201,168,76,0.18) 0%, transparent 65%);
+    pointer-events: none; z-index: 2;
+  }
+
+  /* Floating label on photo */
+  .hero-badge {
+    position: absolute; bottom: 60px; left: 30px; z-index: 3;
+    background: rgba(13,16,23,0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(201,168,76,0.25);
+    padding: 16px 22px;
+  }
+  .hero-badge-role {
+    font-size: 11px; letter-spacing: 2px; color: var(--gold);
+    text-transform: uppercase; font-weight: 500;
+  }
+  .hero-badge-company {
+    font-size: 13px; color: var(--off-wh); margin-top: 4px; font-weight: 300;
+  }
+
+  /* ── MARQUEE STRIP ── */
+  .marquee-strip {
+    background: var(--gold);
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-inner {
+    display: inline-flex; gap: 0;
+    animation: marquee 30s linear infinite;
+  }
+  .marquee-inner span {
+    font-size: 11px; font-weight: 600; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--ink);
+    padding: 0 32px;
+  }
+  .marquee-inner .dot {
+    color: rgba(13,16,23,0.4); padding: 0;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── SECTION WRAPPER ── */
+  section { padding: 120px 80px; }
+  .section-label {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 20px;
+  }
+  .section-label-line { width: 32px; height: 1px; background: var(--gold); }
+  .section-label span {
+    font-size: 10px; letter-spacing: 3.5px; text-transform: uppercase;
+    color: var(--gold); font-weight: 600;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 700; line-height: 1.1;
+    letter-spacing: -1.5px; color: var(--white);
+    margin-bottom: 16px;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-sub {
+    font-size: 15px; color: var(--muted); font-weight: 300;
+    max-width: 540px; line-height: 1.8;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    background: var(--charcoal);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+    align-items: center;
+
+    padding: 1px 80px;
+  }
+  .about-left {}
+  .about-right {}
+
+  .about-para {
+    font-size: 16px; line-height: 1.9; color: var(--muted);
+    font-weight: 300; margin-bottom: 24px;
+  }
+  .about-para strong { color: var(--white); font-weight: 500; }
+
+  .about-chips {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px;
+  }
+  .chip {
+    border: 1px solid rgba(201,168,76,0.25);
+    padding: 7px 16px;
+    font-size: 11px; letter-spacing: 1.5px; color: var(--muted);
+    text-transform: uppercase; font-weight: 500;
+    transition: all 0.25s;
+  }
+  .chip:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* About image */
+  .about-img-wrap {
+    position: relative; aspect-ratio: 4/4;
+    overflow: hidden;
+  }
+  .about-img-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(15%);
+  }
+  /* Gold corner accent */
+  .about-img-wrap::after {
+    content: '';
+    position: absolute; bottom: -16px; right: -16px;
+    width: 80px; height: 80px;
+    border-bottom: 2px solid var(--gold);
+    border-right: 2px solid var(--gold);
+    pointer-events: none;
+  }
+  .about-img-wrap::before {
+    content: '';
+    position: absolute; top: -16px; left: -16px;
+    width: 80px; height: 80px;
+    border-top: 2px solid var(--gold);
+    border-left: 2px solid var(--gold);
+    pointer-events: none; z-index: 2;
+  }
+
+  /* ── EXPERTISE (skills grid) ── */
+  #expertise {
+    background: var(--ink);
+  }
+  .expertise-header {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+    align-items: end; margin-bottom: 72px;
+  }
+
+  .skill-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+  }
+  .skill-card {
+    background: var(--charcoal);
+    padding: 36px 32px;
+    transition: background 0.3s;
+    cursor: default;
+    position: relative; overflow: hidden;
+  }
+  .skill-card::before {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: var(--gold);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.35s ease;
+  }
+  .skill-card:hover::before { transform: scaleX(1); }
+  .skill-card:hover { background: #1E2535; }
+
+  .skill-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; color: var(--gold-dim); letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  .skill-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 700; color: var(--white);
+    margin-bottom: 14px; line-height: 1.2;
+  }
+  .skill-desc {
+    font-size: 13px; color: var(--muted); line-height: 1.7; font-weight: 300;
+  }
+  .skill-tools {
+    margin-top: 20px;
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .skill-tool {
+    font-size: 10px; letter-spacing: 1px; color: var(--gold-dim);
+    text-transform: uppercase; font-family: 'DM Mono', monospace;
+  }
+  .skill-tool + .skill-tool::before { content: ' · '; color: rgba(255,255,255,0.15); }
+
+  /* ── IMPACT ── */
+  #impact {
+    background: var(--slate);
+    padding: 120px 80px;
+  }
+  .impact-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+    margin-top: 72px;
+  }
+  .impact-card {
+    padding: 52px 44px;
+    border-right: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: background 0.3s;
+  }
+  .impact-card:hover { background: rgba(201,168,76,0.04); }
+  .impact-card:nth-child(3n) { border-right: none; }
+  .impact-card:nth-last-child(-n+3) { border-bottom: none; }
+
+  .impact-num {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(44px, 5vw, 68px);
+    font-weight: 900; color: var(--gold);
+    line-height: 1; letter-spacing: -2px;
+    margin-bottom: 12px;
+  }
+  .impact-label {
+    font-size: 13px; font-weight: 600; color: var(--white);
+    letter-spacing: 0.5px; margin-bottom: 16px;
+  }
+  .impact-desc {
+    font-size: 13px; color: var(--muted); line-height: 1.7; font-weight: 300;
+  }
+
+  /* ── EXPERIENCE ── */
+  #experience {
+    background: var(--ink);
+  }
+  .exp-grid {
+    display: grid; grid-template-columns: 280px 1fr; gap: 0;
+    margin-top: 72px;
+  }
+  .exp-nav {
+    border-right: 1px solid rgba(255,255,255,0.06);
+    padding-right: 40px;
+  }
+  .exp-nav-item {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  .exp-nav-item.active .exp-nav-year { color: var(--gold); }
+  .exp-nav-item.active .exp-nav-title { color: var(--white); }
+  .exp-nav-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; color: var(--muted); letter-spacing: 1px;
+    margin-bottom: 6px; transition: color 0.25s;
+  }
+  .exp-nav-title {
+    font-size: 14px; font-weight: 600; color: var(--muted);
+    transition: color 0.25s;
+  }
+  .exp-nav-co {
+    font-size: 12px; color: rgba(138,147,168,0.6); margin-top: 3px;
+  }
+
+  .exp-content { padding-left: 60px; }
+  .exp-panel { display: none; }
+  .exp-panel.active { display: block; }
+
+  .exp-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 700; color: var(--white);
+    letter-spacing: -0.5px; margin-bottom: 6px;
+  }
+  .exp-meta {
+    font-size: 13px; color: var(--gold); margin-bottom: 36px;
+    font-family: 'DM Mono', monospace; letter-spacing: 0.5px;
+  }
+  .exp-bullets { list-style: none; }
+  .exp-bullets li {
+    font-size: 14px; color: var(--muted); line-height: 1.8;
+    padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+    display: flex; gap: 16px; font-weight: 300;
+  }
+  .exp-bullets li::before {
+    content: '→'; color: var(--gold); flex-shrink: 0; margin-top: 2px;
+    font-size: 12px;
+  }
+  .exp-highlight {
+    display: flex; gap: 24px; margin-top: 36px; flex-wrap: wrap;
+  }
+  .exp-hl-card {
+    background: var(--charcoal);
+    padding: 20px 24px; flex: 1; min-width: 140px;
+  }
+  .exp-hl-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-weight: 700; color: var(--gold); line-height: 1;
+  }
+  .exp-hl-lbl {
+    font-size: 11px; color: var(--muted); margin-top: 6px;
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+
+/* ── TOOLS ── */
+#tools {
+  background: var(--charcoal);
+}
+
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 72px;
+}
+
+.stack-category {
+  background: var(--ink);
+  padding: 40px 36px;
+  transition: background 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stack-category::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.stack-category:hover::before {
+  transform: scaleX(1);
+}
+
+.stack-category:hover {
+  background: #1E2535;
+}
+
+.stack-cat-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--gold-dim);
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+}
+
+.stack-cat-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 22px;
+  line-height: 1.2;
+}
+
+.stack-tools {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stack-tool-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 400;
+  transition: color 0.25s;
+}
+
+.stack-tool-item:hover {
+  color: var(--white);
+}
+
+.stack-tool-item::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+/* Soft Skills Strip */
+.soft-skills-wrap {
+  margin-top: 60px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.soft-skills-title {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.soft-skills-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.soft-chip {
+  border: 1px solid rgba(201,168,76,0.25);
+  padding: 8px 18px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--muted);
+  font-weight: 400;
+  transition: all 0.25s;
+}
+
+.soft-chip:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+  /* ── EDUCATION ── */
+  #education {
+    background: var(--ink);
+  }
+  .edu-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 72px;
+  }
+  .edu-card {
+    background: var(--charcoal);
+    padding: 48px 44px;
+    position: relative; overflow: hidden;
+  }
+  .edu-card::after {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(to right, var(--gold), transparent);
+  }
+  .edu-deg {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px; font-weight: 900; color: var(--gold);
+    opacity: 0.15; position: absolute; top: 20px; right: 30px;
+    line-height: 1; pointer-events: none; letter-spacing: -2px;
+  }
+  .edu-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700; color: var(--white);
+    margin-bottom: 10px; line-height: 1.3;
+  }
+  .edu-spec {
+    font-size: 13px; color: var(--gold); margin-bottom: 18px;
+    font-style: italic;
+  }
+  .edu-inst {
+    font-size: 13px; color: var(--muted); margin-bottom: 6px;
+  }
+  .edu-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; color: var(--muted); letter-spacing: 1px;
+  }
+
+  .certs-wrap { margin-top: 60px; }
+  .certs-title {
+    font-size: 11px; letter-spacing: 3px; color: var(--gold);
+    text-transform: uppercase; font-weight: 600; margin-bottom: 28px;
+  }
+  .cert-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .cert-item {
+    padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex; align-items: flex-start; gap: 14px;
+    transition: all 0.2s;
+  }
+  .cert-item:hover { padding-left: 8px; }
+  .cert-dot {
+    width: 4px; height: 4px; background: var(--gold);
+    border-radius: 50%; flex-shrink: 0; margin-top: 7px;
+  }
+  .cert-name {
+    font-size: 13px; color: var(--muted); font-weight: 300; line-height: 1.5;
+  }
+  .cert-by {
+    font-size: 11px; color: rgba(138,147,168,0.5);
+    font-family: 'DM Mono', monospace; letter-spacing: 0.5px;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--charcoal);
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+    min-height: 80vh;
+  }
+  .contact-left {}
+  .contact-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 5vw, 68px);
+    font-weight: 900; color: var(--white); line-height: 1.05;
+    letter-spacing: -2px; margin-bottom: 28px;
+  }
+  .contact-headline em { font-style: italic; color: var(--gold); }
+  .contact-sub {
+    font-size: 15px; color: var(--muted); line-height: 1.8; max-width: 400px;
+    font-weight: 300; margin-bottom: 48px;
+  }
+  .contact-links {
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .contact-link {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+    text-decoration: none; group: true;
+    transition: all 0.25s;
+  }
+  .contact-link:hover { padding-left: 8px; }
+  .contact-link-label {
+    font-size: 10px; letter-spacing: 2px; color: var(--gold-dim);
+    text-transform: uppercase; font-weight: 600;
+  }
+  .contact-link-val {
+    font-size: 14px; color: var(--white); font-weight: 400;
+    margin-top: 3px;
+  }
+  .contact-link-arrow { color: var(--muted); font-size: 18px; }
+
+  /* Right side: large decorative */
+  .contact-right {
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .contact-circle {
+    width: 380px; height: 380px; border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.15);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .contact-circle::before {
+    content: '';
+    position: absolute; inset: 24px; border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.08);
+  }
+  .contact-circle-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic; font-size: 28px; color: var(--white);
+    text-align: center; line-height: 1.4;
+  }
+  .contact-circle-text span { display: block; color: var(--gold); font-size: 13px;
+    font-family: 'Inter', sans-serif; font-style: normal;
+    letter-spacing: 2px; text-transform: uppercase; margin-top: 12px; font-weight: 500;
+  }
+  /* rotating dashed ring */
+  .contact-ring {
+    position: absolute; inset: -40px; border-radius: 50%;
+    border: 1px dashed rgba(201,168,76,0.2);
+    animation: spin 30s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    padding: 36px 80px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+  .footer-logo{
+    display:flex;
+    align-items:center;
+    gap:4px;
+}
+
+.footer-logo img{
+    height:100px;
+    width:auto;
+    display:block;
+    transform: translateY(7px);
+}
+
+.footer-logo span{
+    margin-left:-40px;
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-size:22px;
+    color:var(--gold);
+}
+  .footer-copy {
+    font-size: 11px; color: var(--muted); letter-spacing: 1px;
+  }
+  .footer-loc {
+    font-size: 11px; color: var(--muted); letter-spacing: 1px;
+    text-align: right;
+  }
+
+  /* ── SCROLL FADE-IN ── */
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── CURSOR DOT ── */
+  .cursor {
+    width: 8px; height: 8px;
+    background: var(--gold); border-radius: 50%;
+    position: fixed; pointer-events: none; z-index: 9999;
+    transition: transform 0.15s ease;
+    mix-blend-mode: difference;
+  }
+  .cursor-ring {
+    width: 32px; height: 32px;
+    border: 1px solid rgba(201,168,76,0.5); border-radius: 50%;
+    position: fixed; pointer-events: none; z-index: 9998;
+    transition: all 0.2s ease;
+  }
+  .resume-icon{
+  margin-left:8px;
+  font-size:14px;
+}
+
+/* popup container */
+.resume-popup{
+  position:absolute;
+  top:70px;
+  right:60px;
+  display:none;
+  flex-direction:row;
+  gap:8px;
+  padding:10px;
+  background:rgba(13,16,23,0.95);
+  border:1px solid rgba(201,168,76,0.25);
+  border-radius:14px;
+  backdrop-filter:blur(12px);
+  max-height:50px;
+  align-items:center;
+  z-index:999;
+}
+
+/* show state */
+.resume-popup.show{
+  display:flex;
+}
+
+/* buttons inside */
+.resume-popup a{
+  font-size:11px;
+  padding:6px 10px;
+  border-radius:10px;
+  text-decoration:none;
+  color:var(--muted);
+  border:1px solid rgba(255,255,255,0.08);
+  white-space:nowrap;
+  transition:all 0.2s;
+}
+
+.resume-popup a:hover{
+  color:var(--gold);
+  border-color:var(--gold);
+}
+/* Search */
+.search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-input {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(201,168,76,0.2);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  padding: 8px 36px 8px 14px;
+  width: 0;
+  opacity: 0;
+  transition: width 0.4s ease, opacity 0.4s ease;
+  outline: none;
+}
+.search-input::placeholder { color: var(--muted); }
+.search-input.open {
+  width: 220px;
+  opacity: 1;
+  padding-right: 52px;
+}
+.search-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 25px;
+  padding: 6px;
+  transition: color 0.25s;
+  position: absolute;
+  right: 4px;
+}
+.search-icon-btn:hover { color: var(--gold); }
+.search-clear-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 11px;
+  padding: 4px;
+  transition: color 0.25s;
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.search-clear-btn:hover { color: var(--gold); }
+.search-no-result {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(13,16,23,0.95);
+  border: 1px solid rgba(201,168,76,0.25);
+  color: var(--muted);
+  font-size: 13px;
+  padding: 10px 24px;
+  z-index: 999;
+  display: none;
+  letter-spacing: 0.5px;
+}
+.sh-mark {
+  background: rgba(201,168,76,0.35);
+  border-radius: 2px;
+  color: var(--white);
+  padding: 1px 2px;
+}
+.sh-mark.sh-active {
+  background: rgba(34,197,94,0.5);
+  outline: 1px solid #22C55E;
+  color: var(--white);
+}
+#searchNav {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 0 0 0 12px;
+}
+#searchCounter {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 600;
+  min-width: 44px;
+  text-align: center;
+  background: rgba(201,168,76,0.12);
+  border: 1px solid rgba(201,168,76,0.35);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.search-nav-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 2px 6px;
+  transition: color 0.2s;
+  line-height: 1;
+}
+.search-nav-btn:hover { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="logo.png" alt="Logo">
+    <span>Benson K Mathew</span>
+</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#recognition">Recognition</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="search-wrap">
+  <input class="search-input" id="searchInput" type="text" placeholder="Search anything..."/>
+  <button class="search-icon-btn" id="searchIconBtn">⌕</button>
+  <button class="search-clear-btn" id="searchClearBtn" style="display:none">✕</button>
+</div>
+<div id="searchNav">
+  <button class="search-nav-btn" onclick="prevMatch()">↑</button>
+  <span id="searchCounter">1 / 1</span>
+  <button class="search-nav-btn" onclick="nextMatch()">↓</button>
+</div>
+<div class="search-no-result" id="searchNoResult">No results found</div>
+  <button class="nav-cta" id="resumeBtn">
+  Download Resume
+  <span class="resume-icon">⬇</span>
+</button>
+
+<div class="resume-popup" id="resumePopup">
+  <a href="RevOps.pdf" download>RevOps</a>
+  <a href="RevOps.pdf" download>Strategist</a>
+  <a href="Business-Analyst.pdf" download>Business Analyst</a>
+  <a href="Data-Analyst.pdf" download>Data Analyst</a>
+  <a href="RevOps.pdf" download>Sales Ops</a>
+  <a href="Marketing-Ops.pdf" download>Marketing Ops</a>
+  <a href="RevOps.pdf" download>Commercial Ops</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow reveal">
+      <div class="hero-eyebrow-line"></div>
+      <span>Senior Revenue Operations Strategist</span>
+    </div>
+
+    <h1 class="hero-name reveal reveal-delay-1">
+      Revenue<br><em>Operator.</em><br>Business&nbsp;Strategist.
+    </h1>
+
+    <p class="hero-title reveal reveal-delay-2">Benson K Mathew</p>
+
+    <p class="hero-desc reveal reveal-delay-3">
+      Transforming complex GTM data into executive-level decisions. 4.7 years building revenue systems, forecasting frameworks, and analytics infrastructure for enterprise SaaS.
+    </p>
+
+    <div class="hero-actions reveal reveal-delay-4">
+      <a href="#contact" class="btn-primary">Let's Connect</a>
+      <a href="#experience" class="btn-ghost">
+        View Experience
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="hero-stats reveal">
+      <div class="hero-stat">
+        <div class="hero-stat-num">4.7</div>
+        <div class="hero-stat-lbl">Years in RevOps</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">25+</div>
+        <div class="hero-stat-lbl">BI & CRM Dashboards</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">35%</div>
+        <div class="hero-stat-lbl">Data Accuracy Gain</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-photo-wrap">
+      <!-- Replace this src with your own professional photo -->
+      <img src="pictureSm.png" alt="Benson K Mathew" />
+    </div>
+    <div class="hero-glow"></div>
+    <div class="hero-badge">
+      <div class="hero-badge-role">Currently at</div>
+      <div class="hero-badge-company">Syncron · Senior Revenue Operation Specialist</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner" id="marqueeInner">
+    <span>Revenue Operations</span><span class="dot">·</span>
+    <span>GTM Strategy</span><span class="dot">·</span>
+    <span>Power BI</span><span class="dot">·</span>
+    <span>Salesforce Admin</span><span class="dot">·</span>
+    <span>Pipeline Analytics</span><span class="dot">·</span>
+    <span>Executive Reporting</span><span class="dot">·</span>
+    <span>Forecasting</span><span class="dot">·</span>
+    <span>Revenue Intelligence</span><span class="dot">·</span>
+    <span>Data Storytelling</span><span class="dot">·</span>
+    <span>Commercial Operations</span><span class="dot">·</span>
+    <span>Revenue Operations</span><span class="dot">·</span>
+    <span>GTM Strategy</span><span class="dot">·</span>
+    <span>Power BI</span><span class="dot">·</span>
+    <span>Salesforce Admin</span><span class="dot">·</span>
+    <span>Pipeline Analytics</span><span class="dot">·</span>
+    <span>Executive Reporting</span><span class="dot">·</span>
+    <span>Forecasting</span><span class="dot">·</span>
+    <span>Revenue Intelligence</span><span class="dot">·</span>
+    <span>Data Storytelling</span><span class="dot">·</span>
+    <span>Commercial Operations</span><span class="dot">·</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-left">
+    <div class="section-label reveal">
+      <div class="section-label-line"></div>
+      <span>Who I Am</span>
+    </div>
+    <h2 class="section-title reveal">The Operator<br>Behind the <em>Numbers</em></h2>
+    <p class="about-para reveal">
+      I'm a <strong>Revenue Operations Strategist</strong> with 4.7 years in enterprise SaaS, specialising in turning complex, multi-source data into clear decisions that move business forward. Based in India, operating at a global scale.
+    </p>
+    <p class="about-para reveal">
+      My work lives at the intersection of <strong>data infrastructure, GTM strategy, and executive storytelling</strong>. I've owned WBR/MBR/QBR cycles, built 25+ Power BI dashboards, architected CRM systems, and contributed to an in-house CPQ build, all while keeping the focus on one thing: revenue outcomes.
+    </p>
+    <p class="about-para reveal">
+      Dual MBA with distinction in <strong>Business Intelligence & Analytics and Finance</strong>. Salesforce Admin experience with exposure to Salesforce AI and Agentforce. Always upskilling at the edge of AI and automation.
+    </p>
+    <div class="about-chips reveal">
+      <div class="chip">Salesforce</div>
+      <div class="chip">HubSpot RevOps</div>
+      <div class="chip">Power BI</div>
+      <div class="chip">Tableau</div>
+      <div class="chip">Enterprise SaaS</div>
+    </div>
+  </div>
+  <div class="about-right">
+    <div class="about-img-wrap reveal">
+      <!-- Replace with a professional seated/desk photo of yourself -->
+      <img src="2nd img.png" alt="Benson K Mathew at work" />
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="expertise-header">
+    <div>
+      <div class="section-label reveal">
+        <div class="section-label-line"></div>
+        <span>Core Expertise</span>
+      </div>
+      <h2 class="section-title reveal">Where I<br><em>Deliver</em></h2>
+    </div>
+    <p class="section-sub reveal">Six capability pillars that define how I create value across GTM organisations, from pipeline governance to executive analytics.</p>
+  </div>
+
+  <div class="skill-grid">
+    <div class="skill-card reveal">
+      <div class="skill-num">01</div>
+      <div class="skill-name">Revenue Analytics & Forecasting</div>
+      <div class="skill-desc">Building scalable forecasting models, pipeline health dashboards, and executive reporting frameworks that inform GTM planning.</div>
+      <div class="skill-tools">
+        <span class="skill-tool">Power BI</span>
+        <span class="skill-tool">Salesforce</span>
+        <span class="skill-tool">SQL</span>
+        <span class="skill-tool">DAX</span>
+      </div>
+    </div>
+    <div class="skill-card reveal reveal-delay-1">
+      <div class="skill-num">02</div>
+      <div class="skill-name">CRM Architecture & Administration</div>
+      <div class="skill-desc">Designing and maintaining Salesforce CRM infrastructure including lifecycle stages, workflow automation, routing rules, and data integrity.</div>
+      <div class="skill-tools">
+        <span class="skill-tool">Salesforce</span>
+        <span class="skill-tool">HubSpot</span>
+        <span class="skill-tool">CPQ</span>
+      </div>
+    </div>
+    <div class="skill-card reveal reveal-delay-2">
+      <div class="skill-num">03</div>
+      <div class="skill-name">GTM Operations & Process Design</div>
+      <div class="skill-desc">Architecting lead-to-cash processes, territory planning, quota-setting, and cross-functional alignment across Sales, Marketing, and CS.</div>
+      <div class="skill-tools">
+        <span class="skill-tool">Salesloft</span>
+        <span class="skill-tool">Gainsight</span>
+        <span class="skill-tool">ZoomInfo</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-num">04</div>
+      <div class="skill-name">Executive Business Reviews</div>
+      <div class="skill-desc">Owning end-to-end WBR, MBR, and QBR cycles, synthesising performance data into narratives that directly shape business strategy.</div>
+      <div class="skill-tools">
+        <span class="skill-tool">Tableau</span>
+        <span class="skill-tool">Excel</span>
+        <span class="skill-tool">SPSS</span>
+      </div>
+    </div>
+    <div class="skill-card reveal reveal-delay-1">
+      <div class="skill-num">05</div>
+      <div class="skill-name">Data Storytelling & Insight Generation</div>
+      <div class="skill-desc">Translating complex multi-source data into clear, actionable insights for senior leadership, attribution modelling, cohort analysis, regression.</div>
+      <div class="skill-tools">
+        <span class="skill-tool">Python</span>
+        <span class="skill-tool">VBA</span>
+        <span class="skill-tool">Power Automate</span>
+      </div>
+    </div>
+    <div class="skill-card reveal reveal-delay-2">
+      <div class="skill-num">06</div>
+      <div class="skill-name">AI & Automation Tools</div>
+      <div class="skill-desc">Building AI-assisted workflows and automation pipelines using modern tools : Clay, n8n, Clari, Power Automate, and Generative AI agents.</div>
+      <div class="skill-tools">
+        <span class="skill-tool">Clay</span>
+        <span class="skill-tool">n8n</span>
+        <span class="skill-tool">Clari</span>
+        <span class="skill-tool">Azure</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECOMMENDATIONS -->
+<section id="recognition" style="background: var(--ink); padding: 120px 80px;">
+  <div class="section-label reveal">
+    <div class="section-label-line"></div>
+    <span>Recognition</span>
+  </div>
+  <h2 class="section-title reveal">What <em>Leaders Say</em></h2>
+  <p class="section-sub reveal" style="margin-bottom: 64px;">Recommendations from the people I have worked with directly.</p>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 8px;">
+
+    <div class="reveal" style="background: var(--charcoal); padding: 52px 48px; position: relative; overflow: hidden;">
+      <!-- Top gold line -->
+      <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--gold), transparent);"></div>
+      <!-- Big decorative quote mark -->
+      <div style="font-family: 'Playfair Display', serif; font-size: 120px; color: var(--gold); opacity: 0.08; line-height: 1; position: absolute; top: 12px; left: 36px; pointer-events: none;">"</div>
+      <!-- Quote text -->
+      <p style="font-size: 15px; color: var(--muted); line-height: 1.9; font-weight: 300; margin-bottom: 36px; position: relative; z-index: 1;">
+        I had the privilege of working closely with Benson on my Revenue Operations team, where he consistently demonstrated a strong analytical mindset, exceptional attention to detail, and a genuine passion for driving operational excellence.
+Benson played a key role in some of our most important projects, bringing structure, clarity, and insight to complex challenges. He has a natural ability to translate data into actionable recommendations and communicate them effectively to stakeholders at all levels.
+I have no doubt that Benson will be a valuable asset to any team lucky enough to work with him
+      </p>
+      <!-- Person -->
+      <div style="display: flex; align-items: center; gap: 16px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px;">
+        <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 16px; color: var(--gold); font-weight: 700; flex-shrink: 0;">K</div>
+        <div>
+          <div style="font-size: 14px; font-weight: 600; color: var(--white);">Kris Nagrabski</div>
+          <div style="font-size: 11px; color: var(--gold); margin-top: 3px; letter-spacing: 0.5px;">Director Revenue Operations</div>
+          <div style="font-size: 11px; color: var(--muted); margin-top: 2px; font-family: 'DM Mono', monospace;">Managed Benson directly · 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-1" style="background: var(--charcoal); padding: 52px 48px; position: relative; overflow: hidden;">
+      <!-- Top gold line -->
+      <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--gold), transparent);"></div>
+      <!-- Big decorative quote mark -->
+      <div style="font-family: 'Playfair Display', serif; font-size: 120px; color: var(--gold); opacity: 0.08; line-height: 1; position: absolute; top: 12px; left: 36px; pointer-events: none;">"</div>
+      <!-- Quote text -->
+      <p style="font-size: 15px; color: var(--muted); line-height: 1.9; font-weight: 300; margin-bottom: 36px; position: relative; z-index: 1;">
+        I have had the pleasure of working with Benson, who consistently demonstrates a high level of efficiency and initiative. He excels in creating insightful reports, with a strong ability to understand and interpret data while aligning it with broader business objectives. This enables him to support well-informed, strategic decision-making.
+Benson is a dedicated professional who works diligently to achieve business goals while also providing valuable support to the wider team. It is a pleasure to collaborate with someone who brings both commitment and a proactive mindset to their work.
+      </p>
+      <!-- Person -->
+      <div style="display: flex; align-items: center; gap: 16px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px;">
+        <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 16px; color: var(--gold); font-weight: 700; flex-shrink: 0;">B</div>
+        <div>
+          <div style="font-size: 14px; font-weight: 600; color: var(--white);">Byron Pardo</div>
+          <div style="font-size: 11px; color: var(--gold); margin-top: 3px; letter-spacing: 0.5px;">Head Global SDR</div>
+          <div style="font-size: 11px; color: var(--muted); margin-top: 2px; font-family: 'DM Mono', monospace;">Cross-team collaborator · 2026</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- LinkedIn attribution -->
+  <p class="reveal" style="font-size: 11px; color: var(--muted); text-align: center; margin-top: 40px; letter-spacing: 1px; font-family: 'DM Mono', monospace;">
+    Verified recommendations via LinkedIn · <a href="https://linkedin.com/in/benson-k-mathew" target="_blank" style="color: var(--gold); text-decoration: none;">View full profile</a>
+  </p>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+  <div class="section-label reveal">
+    <div class="section-label-line"></div>
+    <span>Measurable Impact</span>
+  </div>
+  <h2 class="section-title reveal">Numbers That<br><em>Speak</em></h2>
+
+  <div class="impact-grid">
+    <div class="impact-card reveal">
+      <div class="impact-num">35%</div>
+      <div class="impact-label">Data Discrepancy Reduction</div>
+      <div class="impact-desc">Architected end-to-end RevOps infrastructure across CRM, marketing automation, and BI tools, dramatically improving data reliability across the GTM org.</div>
+    </div>
+    <div class="impact-card reveal reveal-delay-1">
+      <div class="impact-num">40%</div>
+      <div class="impact-label">Quote Turnaround Improvement</div>
+      <div class="impact-desc">Contributed to building an in-house CPQ system that standardised pricing workflows and eliminated friction across the sales process.</div>
+    </div>
+    <div class="impact-card reveal reveal-delay-2">
+      <div class="impact-num">18%</div>
+      <div class="impact-label">Deal Cycle Time Reduction</div>
+      <div class="impact-desc">Led cross-functional analysis of the lead-to-deal lifecycle, identifying conversion risk signals and expansion opportunities that accelerated pipeline velocity.</div>
+    </div>
+    <div class="impact-card reveal">
+      <div class="impact-num">8hrs+</div>
+      <div class="impact-label">Weekly Reporting Time Saved</div>
+      <div class="impact-desc">Built and automated sales performance reports in Power BI and Salesforce, freeing Sales, Marketing, and CS teams for higher-value strategic work.</div>
+    </div>
+    <div class="impact-card reveal reveal-delay-1">
+      <div class="impact-num">25+</div>
+      <div class="impact-label">BI Dashboards Built</div>
+      <div class="impact-desc">Designed and maintained automated dashboards and Salesforce scorecards giving global teams real-time visibility into pipeline health and revenue performance.</div>
+    </div>
+    <div class="impact-card reveal reveal-delay-2">
+      <div class="impact-num">30+</div>
+      <div class="impact-label">Sales Org Coverage Managed</div>
+      <div class="impact-desc">Managed territory planning and quota-setting across a 30+ person Sales, BDR, and Partner organisation, aligning capacity to revenue targets globally.</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label reveal">
+    <div class="section-label-line"></div>
+    <span>Career</span>
+  </div>
+  <h2 class="section-title reveal">Professional<br><em>Experience</em></h2>
+
+  <div class="exp-grid">
+    <div class="exp-nav">
+      <div class="exp-nav-item active" data-target="exp1">
+        <div class="exp-nav-year">2024 - Present</div>
+        <div class="exp-nav-title">Senior RevOps Specialist</div>
+        <div class="exp-nav-co">Syncron</div>
+      </div>
+      <div class="exp-nav-item" data-target="exp2">
+        <div class="exp-nav-year">2022 - 2024</div>
+        <div class="exp-nav-title">RevOps Analyst</div>
+        <div class="exp-nav-co">Syncron</div>
+      </div>
+    </div>
+
+    <div class="exp-content">
+      <div class="exp-panel active" id="exp1">
+        <div class="exp-role">Senior Revenue Operations Specialist</div>
+        <div class="exp-meta">Syncron · Bengaluru, Karnataka · Jan 2024 - Present</div>
+        <ul class="exp-bullets">
+          <li>Led end-to-end WBR, MBR, and QBR business reviews, synthesising pipeline health, conversion metrics, and forecast accuracy into executive narratives that shaped GTM strategy for Sales and Marketing leadership</li>
+          <li>Designed and maintained 25+ automated Power BI dashboards and Salesforce scorecards, building scalable reporting frameworks that reduced data discrepancies by 35%</li>
+          <li>Partnered with Customer Success to analyse renewal deal health and churn patterns, building risk scorecards that assessed contract health and competitive threats across at-risk accounts</li>
+          <li>Contributed to building an in-house CPQ system that standardised pricing workflows and reduced quote turnaround time by 40%</li>
+          <li>Managed territory planning and quota-setting for a 30+ person Sales, BDR, and Partner organisation, aligning capacity to revenue targets</li>
+          <li>Led a 2-member Business Analyst team, overseeing task allocation, onboarding, and ramp-up to scale insight delivery</li>
+        </ul>
+        <div class="exp-highlight">
+          <div class="exp-hl-card">
+            <div class="exp-hl-num">35%</div>
+            <div class="exp-hl-lbl">Data accuracy improvement</div>
+          </div>
+          <div class="exp-hl-card">
+            <div class="exp-hl-num">40%</div>
+            <div class="exp-hl-lbl">Quote turnaround improvement</div>
+          </div>
+          <div class="exp-hl-card">
+            <div class="exp-hl-num">25+</div>
+            <div class="exp-hl-lbl">Dashboards built</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-panel" id="exp2">
+        <div class="exp-role">Revenue Operations Analyst</div>
+        <div class="exp-meta">Syncron · Bengaluru, Karnataka · Jan 2022 - Dec 2023</div>
+        <ul class="exp-bullets">
+          <li>Built and automated weekly and monthly sales performance reports in Power BI and Salesforce, saving 8+ hours of manual reporting per week for Sales, Marketing, and CS teams</li>
+          <li>Developed KPI dashboards tracking pipeline health, conversion rates, and revenue performance, delivering actionable insights to senior stakeholders on a consistent cadence</li>
+          <li>Conducted in-depth data analysis to surface growth opportunities, identify pipeline gaps, and support GTM strategy across product and sales teams</li>
+          <li>Gathered and translated business requirements from Sales and Finance stakeholders into functional documentation and Salesforce workflow enhancements</li>
+          <li>Built Salesforce reports tracking pipeline health and identifying high-potential growth segments, directly informing lead generation strategy</li>
+          <li>Ensured data integrity across Salesforce CRM through workflow automation, routing rules, and data hygiene governance</li>
+        </ul>
+        <div class="exp-highlight">
+          <div class="exp-hl-card">
+            <div class="exp-hl-num">8hrs+</div>
+            <div class="exp-hl-lbl">Weekly time saved</div>
+          </div>
+          <div class="exp-hl-card">
+            <div class="exp-hl-num">18%</div>
+            <div class="exp-hl-lbl">Deal cycle reduction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="section-label reveal">
+    <div class="section-label-line"></div>
+    <span>Technology Ecosystem</span>
+  </div>
+  <h2 class="section-title reveal">My <em>Tech Stack</em></h2>
+  <p class="section-sub reveal" style="max-width:100%">A curated ecosystem of enterprise platforms, AI tools, and analytics frameworks I use to architect revenue systems and deliver executive analytics at scale.</p>
+
+  <div class="stack-grid">
+
+    <div class="stack-category reveal">
+      <div class="stack-cat-num">01</div>
+      <div class="stack-cat-title">Revenue Operations</div>
+      <div class="stack-tools">
+        <div class="stack-tool-item">Pipeline & Forecasting</div>
+        <div class="stack-tool-item">Territory & Quota Planning</div>
+        <div class="stack-tool-item">GTM Strategy & Workflow Design</div>
+        <div class="stack-tool-item">ARR Growth Analysis</div>
+        <div class="stack-tool-item">Data Storytelling</div>
+      </div>
+    </div>
+
+    <div class="stack-category reveal reveal-delay-1">
+      <div class="stack-cat-num">02</div>
+      <div class="stack-cat-title">Analytics & BI</div>
+      <div class="stack-tools">
+        <div class="stack-tool-item">Microsoft Power BI</div>
+        <div class="stack-tool-item">Tableau</div>
+        <div class="stack-tool-item">SQL</div>
+        <div class="stack-tool-item">Excel (MOS Certified)</div>
+        <div class="stack-tool-item">Salesforce CRMA Analytics</div>
+        <div class="stack-tool-item">IBM SPSS Statistics</div>
+      </div>
+    </div>
+
+    <div class="stack-category reveal reveal-delay-2">
+      <div class="stack-cat-num">03</div>
+      <div class="stack-cat-title">CRM & Sales Tools</div>
+      <div class="stack-tools">
+        <div class="stack-tool-item">Salesforce Admin</div>
+        <div class="stack-tool-item">HubSpot</div>
+        <div class="stack-tool-item">Salesloft</div>
+        <div class="stack-tool-item">Gainsight</div>
+        <div class="stack-tool-item">ZoomInfo · D&B Hoovers</div>
+        <div class="stack-tool-item">LinkedIn Sales Navigator</div>
+        <div class="stack-tool-item">Workday · CPQ · Kernel</div>
+      </div>
+    </div>
+
+    <div class="stack-category reveal">
+      <div class="stack-cat-num">04</div>
+      <div class="stack-cat-title">AI & Automation</div>
+      <div class="stack-tools">
+        <div class="stack-tool-item">ChatGPT · Claude Code</div>
+        <div class="stack-tool-item">Salesforce Agentforce AI</div>
+        <div class="stack-tool-item">HubSpot AI · Kernel AI</div>
+        <div class="stack-tool-item">Clay · Clari · n8n</div>
+        <div class="stack-tool-item">AI Agents & Prompt Engineering</div>
+        <div class="stack-tool-item">Generative AI Applications</div>
+      </div>
+    </div>
+
+    <div class="stack-category reveal reveal-delay-1">
+      <div class="stack-cat-num">05</div>
+      <div class="stack-cat-title">Project & BA Tools</div>
+      <div class="stack-tools">
+        <div class="stack-tool-item">Jira</div>
+        <div class="stack-tool-item">Confluence</div>
+        <div class="stack-tool-item">Agile & Waterfall Methodologies</div>
+        <div class="stack-tool-item">BPMN Process Modeling</div>
+        <div class="stack-tool-item">Requirements Gathering & Analysis</div>
+      </div>
+    </div>
+
+    <div class="stack-category reveal reveal-delay-2">
+      <div class="stack-cat-num">06</div>
+      <div class="stack-cat-title">Technical Skills</div>
+      <div class="stack-tools">
+        <div class="stack-tool-item">Python (Basics)</div>
+        <div class="stack-tool-item">DAX</div>
+        <div class="stack-tool-item">HTML · CSS</div>
+        <div class="stack-tool-item">Microsoft 365 · Azure</div>
+        <div class="stack-tool-item">Power Apps · Power Automate</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Soft Skills Strip -->
+  <div class="soft-skills-wrap reveal">
+    <div class="soft-skills-title">Soft Skills & Leadership</div>
+    <div class="soft-skills-chips">
+      <div class="soft-chip">Executive Storytelling</div>
+      <div class="soft-chip">Stakeholder Management</div>
+      <div class="soft-chip">Analytical Thinking</div>
+      <div class="soft-chip">Cross-Functional Collaboration</div>
+      <div class="soft-chip">Strategic Thinking</div>
+      <div class="soft-chip">Problem-Solving</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label reveal">
+    <div class="section-label-line"></div>
+    <span>Credentials</span>
+  </div>
+  <h2 class="section-title reveal">Education &<br><em>Certifications</em></h2>
+
+  <div class="edu-grid">
+    <div class="edu-card reveal">
+      <div class="edu-deg">MBA</div>
+      <div class="edu-title">Master of Business Administration</div>
+      <div class="edu-spec">Business Intelligence & Analytics · Finance</div>
+      <div class="edu-inst">Kristu Jayanti College, Bangalore University</div>
+      <div class="edu-year">Jun 2020 - May 2022 · Distinction</div>
+    </div>
+    <div class="edu-card reveal reveal-delay-1">
+      <div class="edu-deg">BCom</div>
+      <div class="edu-title">Bachelor of Commerce</div>
+      <div class="edu-spec">Computer Application</div>
+      <div class="edu-inst">Mahatma Gandhi University, Kerala</div>
+      <div class="edu-year">Mar 2016 - Mar 2020 · Distinction</div>
+    </div>
+  </div>
+
+  <div class="certs-wrap reveal">
+    <div class="certs-title">Certifications</div>
+    <div class="cert-list">
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div>
+          <div class="cert-name">HubSpot Revenue Operations</div>
+          <div class="cert-by">HubSpot Academy</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div>
+          <div class="cert-name">Financial Accounting: Advanced Topics</div>
+          <div class="cert-by">Coursera</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div>
+          <div class="cert-name">Salesforce Admin Certification</div>
+          <div class="cert-by">AICTE</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div>
+          <div class="cert-name">SQL: Data Reporting and Analysis</div>
+          <div class="cert-by">LinkedIn Learning</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div>
+          <div class="cert-name">Career Essentials in Generative AI</div>
+          <div class="cert-by">Microsoft & LinkedIn</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div>
+          <div class="cert-name">Agile Requirements Foundations</div>
+          <div class="cert-by">LinkedIn Learning</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div>
+          <div class="cert-name">Microsoft Office Specialist: Excel</div>
+          <div class="cert-by">Microsoft</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div>
+          <div class="cert-name">Business Analytics: Marketing Data</div>
+          <div class="cert-by">Madecraft</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-left">
+    <div class="section-label reveal">
+      <div class="section-label-line"></div>
+      <span>Let's Connect</span>
+    </div>
+    <h2 class="contact-headline reveal">
+      Ready to Drive<br><em>Revenue</em><br>Together?
+    </h2>
+    <p class="contact-sub reveal">
+      Open to Senior RevOps, Commercial Operations, GTM Analytics, and Sales Operations leadership roles. Available for full-time positions and strategic consulting.
+    </p>
+    <div class="contact-links reveal">
+      <a href="mailto:bensonkmathew01@gmail.com" class="contact-link">
+        <div>
+          <div class="contact-link-label">Email</div>
+          <div class="contact-link-val">bensonkmathew01@gmail.com</div>
+        </div>
+        <div class="contact-link-arrow">→</div>
+      </a>
+      <a href="tel:+919645153329" class="contact-link">
+        <div>
+          <div class="contact-link-label">Phone</div>
+          <div class="contact-link-val">+91-9645153329</div>
+        </div>
+        <div class="contact-link-arrow">→</div>
+      </a>
+      <a href="https://linkedin.com/in/benson-k-mathew" target="_blank" class="contact-link">
+        <div>
+          <div class="contact-link-label">LinkedIn</div>
+          <div class="contact-link-val">linkedin.com/in/benson-k-mathew</div>
+        </div>
+        <div class="contact-link-arrow">→</div>
+      </a>
+      <a href="#" class="contact-link">
+        <div>
+          <div class="contact-link-label">Location</div>
+          <div class="contact-link-val">India · Open to Remote & Hybrid Roles · Open to Relocation Across India</div>
+        </div>
+        <div class="contact-link-arrow">→</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="contact-right reveal">
+    <div class="contact-ring"></div>
+    <div class="contact-circle">
+      <div class="contact-circle-text">
+        "Data that drives<br>decisions. Operations<br>that scale revenue."
+        <span>Benson K Mathew</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="logo.png" alt="Logo">
+    <span>Benson K Mathew</span>
+</div>
+  <div class="footer-copy">© 2025 · All rights reserved</div>
+  <div class="footer-loc">Bengaluru, India<br>Senior Revenue Operations Strategist</div>
+</footer>
+
+<script>
+  // Cursor
+  const cursor = document.getElementById('cursor');
+  const ring   = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  function animateCursor() {
+    cursor.style.left = mx - 4 + 'px';
+    cursor.style.top  = my - 4 + 'px';
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx - 16 + 'px';
+    ring.style.top  = ry - 16 + 'px';
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Experience tabs
+  document.querySelectorAll('.exp-nav-item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.exp-nav-item').forEach(i => i.classList.remove('active'));
+      document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));
+      item.classList.add('active');
+      document.getElementById(item.dataset.target).classList.add('active');
+    });
+  });
+
+  // Nav scroll effect
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.background = window.scrollY > 60
+      ? 'rgba(13,16,23,0.95)'
+      : 'rgba(13,16,23,0.7)';
+  });
+
+  // Animate bars
+  const toolRows = document.querySelectorAll('.tool-bar-fill');
+  const barObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.width = e.target.style.width;
+        barObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  toolRows.forEach(b => {
+    const w = b.style.width;
+    b.style.width = '0';
+    setTimeout(() => { b.style.width = w; }, 300);
+    barObserver.observe(b);
+  });
+
+  // Resume popup
+  const resumeBtn = document.getElementById('resumeBtn');
+  const resumePopup = document.getElementById('resumePopup');
+  resumeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    resumePopup.classList.toggle('show');
+  });
+  document.addEventListener('click', () => {
+    resumePopup.classList.remove('show');
+  });
+
+  // ── SEARCH ──
+  const searchInput    = document.getElementById('searchInput');
+  const searchIconBtn  = document.getElementById('searchIconBtn');
+  const searchNoResult = document.getElementById('searchNoResult');
+  const searchNav      = document.getElementById('searchNav');
+  const searchCounter  = document.getElementById('searchCounter');
+  const searchClearBtn = document.getElementById('searchClearBtn');
+
+  let allMatches   = [];
+  let currentMatch = 0;
+  let snapshots    = []; // stores { el, html } before any highlighting
+
+  // Collect all leaf-level searchable elements once on page load
+  // These are the smallest containers whose innerHTML we snapshot and restore
+  const SEARCH_SELECTORS = [
+    'section p', 'section li', 'section h1', 'section h2', 'section h3',
+    'section h4', 'section .skill-name', 'section .skill-desc',
+    'section .stack-cat-title', 'section .stack-tool-item',
+    'section .impact-label', 'section .impact-desc',
+    'section .impact-num', 'section .exp-role', 'section .exp-meta',
+    'section .exp-hl-lbl', 'section .edu-title', 'section .edu-spec',
+    'section .edu-inst', 'section .edu-year', 'section .cert-name',
+    'section .cert-by', 'section .hero-stat-lbl', 'section .hero-badge-company',
+    'section .section-label span', 'section .about-para',
+    'section .soft-chip', 'section .chip'
+  ].join(', ');
+
+  let searchableEls = [];
+
+  function initSearch() {
+    searchableEls = Array.from(document.querySelectorAll(SEARCH_SELECTORS));
+  }
+
+  // Call after DOM ready
+  initSearch();
+
+  function resetSnapshots() {
+    snapshots = searchableEls.map(el => ({ el, html: el.innerHTML }));
+  }
+
+  function restoreSnapshots() {
+    snapshots.forEach(s => { s.el.innerHTML = s.html; });
+    snapshots = [];
+    allMatches = [];
+  }
+
+  function runSearch(term) {
+    // restore clean HTML first
+    if (snapshots.length) restoreSnapshots();
+    if (!term) return;
+
+    // snapshot current clean HTML
+    resetSnapshots();
+
+    const termLower = term.toLowerCase();
+    const escaped   = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex     = new RegExp(`(${escaped})`, 'gi');
+
+    // temporarily show all exp panels so hidden ones get searched
+    document.querySelectorAll('.exp-panel').forEach(p => p.style.display = 'block');
+
+    searchableEls.forEach(el => {
+      if (!el.textContent.toLowerCase().includes(termLower)) return;
+      // replace only text nodes, preserving child element structure
+      highlightTextNodes(el, regex);
+    });
+
+    // restore panel visibility
+    document.querySelectorAll('.exp-panel').forEach(p => p.style.display = '');
+    const activePanel = document.querySelector('.exp-panel.active');
+    if (activePanel) activePanel.style.display = 'block';
+
+    allMatches = Array.from(document.querySelectorAll('.sh-mark'));
+  }
+
+  function highlightTextNodes(el, regex) {
+    el.childNodes.forEach(node => {
+      if (node.nodeType === 3) {
+        // text node
+        const text = node.textContent;
+        if (!regex.test(text)) { regex.lastIndex = 0; return; }
+        regex.lastIndex = 0;
+        const highlighted = text.replace(regex, '<mark class="sh-mark">$1</mark>');
+        const span = document.createElement('span');
+        span.innerHTML = highlighted;
+        node.parentNode.replaceChild(span, node);
+      } else if (node.nodeType === 1 && node.tagName !== 'MARK') {
+        highlightTextNodes(node, regex);
+      }
+    });
+  }
+
+  searchIconBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    searchInput.classList.toggle('open');
+    if (searchInput.classList.contains('open')) {
+      searchInput.focus();
+      searchClearBtn.style.display = 'inline-block';
+    } else {
+      closeSearch();
+    }
+  });
+
+  searchClearBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeSearch();
+  });
+
+  function closeSearch() {
+    searchInput.value = '';
+    searchInput.classList.remove('open');
+    if (snapshots.length) restoreSnapshots();
+    searchNav.style.display = 'none';
+    searchNoResult.style.display = 'none';
+    searchClearBtn.style.display = 'none';
+    allMatches = [];
+    currentMatch = 0;
+  }
+
+  searchInput.addEventListener('click', (e) => { e.stopPropagation(); });
+
+  searchInput.addEventListener('input', () => {
+    const term = searchInput.value.trim();
+    runSearch(term);
+    searchNav.style.display = 'none';
+    searchNoResult.style.display = 'none';
+
+    if (!term) return;
+
+    if (allMatches.length === 0) {
+      searchNoResult.style.display = 'block';
+      setTimeout(() => { searchNoResult.style.display = 'none'; }, 2500);
+      return;
+    }
+
+    currentMatch = 0;
+    goToMatch(currentMatch);
+    if (allMatches.length > 1) searchNav.style.display = 'flex';
+    updateCounter();
+  });
+
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeSearch();
+    if (e.key === 'Enter') nextMatch();
+  });
+
+  function goToMatch(idx) {
+    allMatches.forEach(m => m.classList.remove('sh-active'));
+    allMatches[idx].classList.add('sh-active');
+    const panel = allMatches[idx].closest('.exp-panel');
+    if (panel && !panel.classList.contains('active')) {
+      document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.exp-nav-item').forEach(i => i.classList.remove('active'));
+      panel.classList.add('active');
+      const navItem = document.querySelector(`[data-target="${panel.id}"]`);
+      if (navItem) navItem.classList.add('active');
+    }
+    allMatches[idx].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    updateCounter();
+  }
+
+  function nextMatch() {
+    if (!allMatches.length) return;
+    currentMatch = (currentMatch + 1) % allMatches.length;
+    goToMatch(currentMatch);
+  }
+
+  function prevMatch() {
+    if (!allMatches.length) return;
+    currentMatch = (currentMatch - 1 + allMatches.length) % allMatches.length;
+    goToMatch(currentMatch);
+  }
+
+  function updateCounter() {
+    searchCounter.textContent = (currentMatch + 1) + ' / ' + allMatches.length;
+  }
+</script>
